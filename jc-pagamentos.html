@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/css/JC-produto.css' %}">
+</head>
+<body>
+    <h1>Página de produto</h1><!-- titulo teste-->
+       <p> Página com descricao do produto</p><!-- descricao do produto-->
+
+            <img src="{% static 'core/img/Colar2.png' %}" alt="Colar de ouro"><!-- foto do produto -->
+            <p class="nome-produto">Colar com pingente e fios de prata</p>
+            <p>Formas de pagamento</p><!-- detalhes de como pode ser o pagamento-->
+
+    <div class="quantidade-container"><!-- caixa de quantidade no html-->
+        <label for="quantidade">Quantidade</label>
+     <div class="quantidade-controles">
+        <button onclick="diminuir()">−</button>
+        <span id="quantidade">1</span>
+         <button onclick="aumentar()">+</button>
+  </div>
+</div>
+<script>
+  let quantidade = 1;// aqui tambem é a caixa de quantidade só que funcional no java script
+  const span = document.getElementById("quantidade");
+
+  function aumentar() {
+    quantidade++;
+    span.innerText = quantidade;
+  }
+
+  function diminuir() {
+    if (quantidade > 1) {
+      quantidade--;
+      span.innerText = quantidade;
+    }
+  }
+</script>
+<a href="JC-produto.html">voltar</a>
+
+
+</body>
+</html>
